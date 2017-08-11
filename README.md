@@ -106,7 +106,7 @@ console.log('Working!')
  ```
 3. Run ```webpack-dev-server```:
 ```sh
-yarn start
+$ yarn start
 ```
 4. Open http://127.0.0.1:8080 in browser and see the console
 
