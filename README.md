@@ -5,9 +5,13 @@ This document describes step by step to prepare the environment with [**React**]
 ```sh
 $ sudo apt install nodejs yarn
 ```
-Check installed version of ```nodejs``` and ```yarn```
-```SH
+Check installed version:
+
+```sh
 $ node -v
+```
+
+```sh
 $ yarn -v
 ```
 ## Start Project ##
@@ -32,6 +36,8 @@ $ yarn add babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
 In ```directory_project``` create a file called ```webpack.config.js``` with the following content:
 
 ```js
+// webpack.config.js
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -61,6 +67,8 @@ module.exports = {
 In ```directory_project``` create a file called ```.babelrx``` with the following content:
 
 ```js
+// .babelrx
+
 {
     "presets": [
         "es2015", "react"
@@ -71,6 +79,8 @@ In ```directory_project``` create a file called ```.babelrx``` with the followin
 ## Add Start Command for webpack-dev-server ##
  Update file  ```package.json``` add the key  ```scripts ``` above key  ```dependencies ```:
   ```js
+// package.json
+
 "scripts": {
     "start": "webpack-dev-server"
 },
@@ -86,6 +96,7 @@ Now, when you wish to run ```webpack-dev-server``` do:
 
 ```html
  <!-- index.html -->
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -101,6 +112,7 @@ Now, when you wish to run ```webpack-dev-server``` do:
  ```
  ```js
 // index.js
+
 console.log('Working!')
  ```
 3. Run ```webpack-dev-server```:
