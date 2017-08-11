@@ -1,5 +1,5 @@
 # React-Environment
-This document describes step by step to prepare the environment with React, webpack and Babel
+This document describes step by step to prepare the environment with [**React**](https://facebook.github.io/react/), [**webpack**](https://webpack.github.io/) and [**Babel**](https://babeljs.io/)
 
 ## Install Dependencies ##
 ```sh
@@ -99,7 +99,6 @@ Now, when you wish to run ```webpack-dev-server``` do:
     </body>
 </html>
  ```
- 
  ```js
 // index.js
 console.log('Working!')
