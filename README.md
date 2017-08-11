@@ -1,5 +1,5 @@
 # React-Environment
-This document describes step by step to prepare the environment with [**React**](https://facebook.github.io/react/), [**webpack**](https://webpack.github.io/) and [**Babel**](https://babeljs.io/)
+This document describes step by step to prepare the environment with [**React**](https://facebook.github.io/react/), [**webpack**](https://webpack.github.io/) and [**Babel**](https://babeljs.io/) on SO Ubuntu 16
 
 ## Install Dependencies ##
 ```sh
@@ -105,7 +105,7 @@ Now, when you wish to run ```webpack-dev-server``` do:
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>litle test</title>
     </head>
-    
+
     <body>
         open console
     </body>
