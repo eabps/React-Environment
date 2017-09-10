@@ -1,125 +1,35 @@
 # React-Environment
-This document describes step by step to prepare the environment with [**React**](https://facebook.github.io/react/), [**webpack**](https://webpack.github.io/) and [**Babel**](https://babeljs.io/) on SO Ubuntu 16
+This document describes step by step to prepare the environment with [**React**](https://facebook.github.io/react/) and [**Bootstrap**](http://getbootstrap.com/) on SO Ubuntu 16
 
 ## Install Dependencies ##
-```sh
-$ sudo apt install nodejs yarn
-```
-Check installed version:
 
+**Node.js** - *Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.*
 ```sh
-$ node -v
+$ sudo apt install nodejs && node -v
 ```
 
+**Yarn** - *Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world.*
 ```sh
-$ yarn -v
+$ sudo apt install yarn && yarn -v
 ```
+
+**Create-React-App** - *is a lib for easy startup of react projects*
+```sh
+$ yarn global add create-react-app
+```
+
+## Create Project ##
+```sh
+$ create-react-app project-name
+```
+
+**Install Bootstrap 4** - *Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.*
+```sh
+$ yarn add bootstrap@4
+```
+
 ## Start Project ##
-In your ```directory_project``` do:
-```sh
-$ yarn init
-```
-After run ```yarn init``` will have in your ```directory_project```:
- - ```node_modules```
- - ```package.json```
- - ```yarn.lock```
-
-## Install Project Dependencies ##
-```sh
-$ yarn add webpack webpack-dev-server path react react-dom html-webpack-plugin
-```
-```sh
-$ yarn add babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
-```
-
-## Config webpack ##
-In ```directory_project``` create a file called ```webpack.config.js``` with the following content:
-
-```js
-// webpack.config.js
-
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: './src/index.html',
-    filename: 'index.html',
-    inject: 'body'
-});
-
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve('dist'),
-        filename: 'index_bundle.js'
-    },
-    module: {
-        loaders: [
-            {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/}, // for browser read js written in ES6
-            {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/} // for browser read jsx written in ES6
-        ]
-    },
-
-    plugins: [HtmlWebpackPluginConfig],
-}
-```
-
-## Config Babel ##
-In ```directory_project``` create a file called ```.babelrx``` with the following content:
-
-```js
-// .babelrx
-
-{
-    "presets": [
-        "es2015", "react"
-    ]
-}
-```
-
-## Add Start Command for webpack-dev-server ##
- Update file  ```package.json``` add the key  ```scripts ``` above key  ```dependencies ```:
-  ```js
-// package.json
-
-"scripts": {
-    "start": "webpack-dev-server"
-},
-// dependecies here
-```
-Now, when you wish to run ```webpack-dev-server``` do:
-```sh
- $ yarn start 
-```
-## Start with React (Little Test) ##
-1. In ```directory_project``` create new directory called ```src```:
-2. In ```src``` create two files: ```index.html``` and ```index.js```
-
-```html
- <!-- index.html -->
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>litle test</title>
-    </head>
-
-    <body>
-        open console
-    </body>
-</html>
- ```
- ```js
-// index.js
-
-console.log('Working!')
- ```
-3. Run ```webpack-dev-server```:
+In directory project, do:
 ```sh
 $ yarn start
 ```
-4. Open http://127.0.0.1:8080 in browser and see the console
-
-Ref: https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel
